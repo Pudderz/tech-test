@@ -38,7 +38,8 @@ const findAverage = (async () => {
   }
 
   console.log(`${i} times ran`);
-
+  //show initial results before sorting - 
+  //averageSurveys.displayData();
   averageSurveys.sortSurveyResults().removeAllOutliers();
 
   averageSurveys.displayData();
