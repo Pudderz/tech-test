@@ -1,5 +1,4 @@
 const GetSurveys = require("./classes/GetSurveys");
-const { performance } = require("perf_hooks");
 const {
   INITIAL_NUMBER_OF_REQUESTS,
   MAX_REQUEST_LIMIT,
@@ -22,7 +21,6 @@ const averageSurveys = new GetSurveys(API_BACKEND);
 // a network error or surveys averages are done
 
 const findAverage = (async () => {
-  const startTime = performance.now();
   let numberOfRequests = INITIAL_NUMBER_OF_REQUESTS;
   let shouldStop = false;
   let i = 0;
@@ -44,7 +42,6 @@ const findAverage = (async () => {
   averageSurveys.sortSurveyResults().removeAllOutliers();
 
   averageSurveys.displayData();
-  console.log(performance.now() - startTime);
 })();
 
 
