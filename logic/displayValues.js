@@ -1,12 +1,13 @@
 //Displays data from surveys class via console
 
-const displayValues = (survey, totalSurveysDone) => {
+const displayValues = (survey={}, totalSurveysDone=0) => {
   const {
     averageTime,
     allTimes,
     lowerQuartile,
     upperQuartile,
     surveyId,
+    sorted
   } = survey;
 
   console.log(
@@ -15,7 +16,7 @@ const displayValues = (survey, totalSurveysDone) => {
       averageTime / 1000 / 60
     )} minutes`
   );
-  if (allTimes) {
+  if (allTimes && sorted) {
     console.log(
       `\n min time - ${Math.round(allTimes[0] / 1000 / 60)} minutes ${
         Math.round(allTimes[0] / 1000) % 60
