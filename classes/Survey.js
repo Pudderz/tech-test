@@ -1,6 +1,6 @@
 const { MEAN_CHANGE_STOP_AS_PERCENTAGE } = require("../globals");
 const getQuartiles = require("../logic/getQuartiles");
-const { displayValues } = require("../logic/displayValues");
+const displayValues = require("../logic/displayValues");
 const quickSort = require("../logic/quickSort");
 
 /*

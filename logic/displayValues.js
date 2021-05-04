@@ -43,4 +43,4 @@ const displayValues = (survey, totalSurveysDone) => {
   );
 };
 
-module.exports = { displayValues };
+module.exports = displayValues;

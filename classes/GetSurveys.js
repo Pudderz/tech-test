@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 const { API_BACKEND } = require("../globals");
-const { getTimeDiffFromString } = require("../logic/getTime");
+const getTimeDiffFromString = require("../logic/getTime");
 const AllSurveys = require("./AllSurveys");
 
 //handles functionalities of fetching the data from the backend server
@@ -50,4 +50,4 @@ class GetSurveys extends AllSurveys {
   }
 }
 
-module.exports = { GetSurveys };
+module.exports =  GetSurveys ;

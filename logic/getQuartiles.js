@@ -1,3 +1,9 @@
+/*
+  Works out the lower and upper quartiles by working out the median of the
+  array. Spilting the array by the mid point(median) and finding the median
+  in each of the new arrays.
+*/
+
 function getMedian(array) {
   const len = array.length;
   const medianIndex = Math.floor(len / 2);
@@ -11,7 +17,6 @@ function getMedian(array) {
 }
 
 function getQuartiles(array) {
-  //guard clauses
   if (!Array.isArray(array) || array.length === 0) return {};
   if (array.length === 1) {
     return {
@@ -21,21 +26,14 @@ function getQuartiles(array) {
     };
   }
 
-
   const { len, value: medium, index: medianIndex } = getMedian(array);
 
-  const { value: lowerQuartile, index: lowerIndex } = getMedian(
-    array.slice(0, medianIndex)
-  );
+  const { value: lowerQuartile } = getMedian(array.slice(0, medianIndex));
 
   if (len % 2) {
-    var { value: upperQuartile, index: upperIndex } = getMedian(
-      array.slice(medianIndex + 1)
-    );
+    var { value: upperQuartile } = getMedian(array.slice(medianIndex + 1));
   } else {
-    var { value: upperQuartile, index: upperIndex } = getMedian(
-      array.slice(medianIndex)
-    );
+    var { value: upperQuartile } = getMedian(array.slice(medianIndex));
   }
 
   const interQuartileRange = upperQuartile - lowerQuartile;
@@ -44,11 +42,7 @@ function getQuartiles(array) {
     lowerQuartile,
     upperQuartile,
     interQuartileRange,
-    // medium,
-    // medianIndex,
-    // lowerIndex,
-    // upperIndex,
   };
 }
 
-module.exports =  getQuartiles;
+module.exports = getQuartiles;

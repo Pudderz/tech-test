@@ -19,4 +19,4 @@ function quickSort(array) {
     ];
   }
 
-module.exports = {quickSort};
+module.exports = quickSort;

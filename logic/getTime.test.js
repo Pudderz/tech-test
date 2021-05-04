@@ -1,4 +1,4 @@
-const { getTimeDiffFromString } = require("./getTime");
+const getTimeDiffFromString = require("./getTime");
 
 test("Convert startDate and endDate to difference", () => {
   expect(
@@ -21,9 +21,7 @@ test("Empty strings to throw error", () => {
       startTime: "",
       endTime: "",
     })
-  ).toThrow(
-    "Invalid date input, startTime or endTime should be as ISO string"
-  );
+  ).toThrow("Invalid date input, startTime or endTime should be as ISO string");
 });
 
 test("any nonTimeFormat strings to throw error", () => {
@@ -45,7 +43,7 @@ test("endDate that are smaller than startDate will throw error", () => {
 });
 
 test("test change of date (overnight)", () => {
-    expect(
+  expect(
     getTimeDiffFromString({
       startTime: "2021-05-02T23:06:28.213Z",
       endTime: "2021-06-03T01:07:28.213Z",

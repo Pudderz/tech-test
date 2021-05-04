@@ -1,4 +1,4 @@
-const { GetSurveys } = require("./classes/GetSurveys");
+const GetSurveys = require("./classes/GetSurveys");
 const { performance } = require("perf_hooks");
 const {
   INITIAL_NUMBER_OF_REQUESTS,

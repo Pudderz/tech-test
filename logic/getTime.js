@@ -24,4 +24,4 @@ const getTimeDiffFromString = ({ startTime, endTime } = {}) => {
   return difference;
 };
 
-module.exports = { getTimeDiffFromString };
+module.exports = getTimeDiffFromString;
