@@ -9,7 +9,10 @@ class AllSurveys {
   }
 
   checkAndAddSurvey(surveyId) {
-    if (typeof this.surveys[surveyId] == "undefined") {
+    if (
+      typeof this.surveys[surveyId] == "undefined" &&
+      (surveyId <= 0 || surveyId > 0)
+    ) {
       this.surveys[surveyId] = new Survey(surveyId);
       this.numOfSurveys += 1;
     }
@@ -20,6 +23,14 @@ class AllSurveys {
   }
 
   addData({ surveyId, time }) {
+    //checks if surveyId and time are a number (faster version of isNaN)
+    if (
+      (!(time <= 0) && !(time > 0)) ||
+      (!(surveyId <= 0) && !(surveyId > 0))
+    ) {
+      return this;
+    }
+
     this.checkAndAddSurvey(surveyId);
     this.totalUserSurveys++;
 
@@ -35,15 +46,19 @@ class AllSurveys {
 
   sortSurveyResults() {
     for (const surveyId in this.surveys) {
-      this.surveys[surveyId].sortAllTimes();
+      if (this.surveys[surveyId] instanceof Survey) {
+        this.surveys[surveyId].sortAllTimes();
+      }
     }
     return this;
   }
 
   removeAllOutliers() {
     for (const surveyId in this.surveys) {
-      const totalSurveysRemoved = this.surveys[surveyId].removeOutliers();
-      this.totalUserSurveys -= totalSurveysRemoved;
+      if (this.surveys[surveyId] instanceof Survey) {
+        const totalSurveysRemoved = this.surveys[surveyId].removeOutliers();
+        this.totalUserSurveys -= totalSurveysRemoved;
+      }
     }
     return this;
   }
