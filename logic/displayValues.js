@@ -1,3 +1,5 @@
+//Displays data from surveys class via console
+
 const displayValues = (survey, totalSurveysDone) => {
   const {
     averageTime,
@@ -34,7 +36,10 @@ const displayValues = (survey, totalSurveysDone) => {
     );
   }
   console.log(
-    ` Percentage received - ${((allTimes.length / totalSurveysDone) * 100).toFixed(2)}%`
+    ` Percentage received - ${(
+      (allTimes.length / totalSurveysDone) *
+      100
+    ).toFixed(2)}%`
   );
 };
 

@@ -51,7 +51,6 @@ test("fetches data from server when server returns a error response throws netwo
 });
 
 test("fetches data from server multiple times and adds them to Survey Class", async () => {
-
   fetch.mockImplementation(() => {
     return Promise.resolve(
       new Response(JSON.stringify(fetchData), successResponse)

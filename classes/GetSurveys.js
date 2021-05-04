@@ -30,7 +30,6 @@ class GetSurveys extends AllSurveys {
       this.addData({ surveyId: data.surveyId, time });
     } catch (err) {
       console.error(err.message);
-      console.log("error adding data")
     }
   }
 
@@ -43,13 +42,11 @@ class GetSurveys extends AllSurveys {
       }
 
       await Promise.all(promises);
-       return { shouldStop: false };
+      return { shouldStop: false };
     } catch (err) {
       console.error(err);
       return { shouldStop: true };
     }
-
-   
   }
 }
 
