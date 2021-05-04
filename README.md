@@ -45,6 +45,6 @@
 ### Object-Oriented layout
 - classes
   - Survey classes for each new survey id received
-  - AllSurvey class to deal with functionality for all of the surveys
-  - CompletedSurveyEvent class extends AllSurveys for the functionality of fetching the request 
+  - AllSurvey class to deal with functionality for dealing and creating all of the surveys
+  - GetSurvey class extends AllSurveys for the functionality of fetching the request 
   
