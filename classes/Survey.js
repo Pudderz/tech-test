@@ -51,7 +51,7 @@ class Survey {
     this.upperQuartile = upperQuartile;
 
     //set min to 500ms (below this rounds to 0s) if lowerQuartile is less than 500ms
-    //to ignore people with a time of 0 seconds
+    //to be able ignore people with a time of 0 seconds
     const min = Math.max(lowerQuartile - 1.5 * interQuartileRange, 500);
     const max = upperQuartile + 1.5 * interQuartileRange;
 

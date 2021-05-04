@@ -23,7 +23,7 @@ class AllSurveys {
   }
 
   addData({ surveyId, time }) {
-    //checks if surveyId and time are a number (faster version of isNaN)
+    //checks if surveyId and time are not a number (faster version of isNaN)
     if (
       (!(time <= 0) && !(time > 0)) ||
       (!(surveyId <= 0) && !(surveyId > 0))
@@ -37,6 +37,7 @@ class AllSurveys {
     const survey = this.surveys[surveyId];
     survey.addTime(time);
 
+    //checks to see if survey average isDone has changed
     if (survey.checkIfIsDoneChanged()) {
       this.numOfSurveyAveragesDone += survey.isDone ? 1 : -1;
     }
