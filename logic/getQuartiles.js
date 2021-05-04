@@ -1,6 +1,6 @@
 /*
   Works out the lower and upper quartiles by working out the median of the
-  array. Spilting the array by the mid point(median) and finding the median
+  input array. Spilting the array by the mid point(median) and finding the median
   in each of the new arrays.
 */
 

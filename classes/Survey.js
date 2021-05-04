@@ -19,6 +19,13 @@ class Survey {
     this.isDone = false;
   }
 
+  addTime(time) {
+    this.sorted = false;
+    this.allTimes.push(time);
+    this.totalTime += time;
+    this.updateAverages();
+  }
+
   updateAverages() {
     const newAverage = this.totalTime / this.allTimes.length;
     this.averageMeanChangeTotal =
@@ -26,13 +33,6 @@ class Survey {
 
     this.averageMeanChange = this.averageMeanChangeTotal / this.allTimes.length;
     this.averageTime = newAverage;
-  }
-
-  addTime(time) {
-    this.sorted = false;
-    this.allTimes.push(time);
-    this.totalTime += time;
-    this.updateAverages();
   }
 
   displaySurveyData(totalSurveysDone) {
@@ -50,7 +50,7 @@ class Survey {
     this.lowerQuartile = lowerQuartile;
     this.upperQuartile = upperQuartile;
 
-    //set min to 500ms (below this rounds to 0s) if lowerQuartile is less than 500ms 
+    //set min to 500ms (below this rounds to 0s) if lowerQuartile is less than 500ms
     //to ignore people with a time of 0 seconds
     const min = Math.max(lowerQuartile - 1.5 * interQuartileRange, 500);
     const max = upperQuartile + 1.5 * interQuartileRange;
@@ -58,8 +58,8 @@ class Survey {
     return { min, max };
   }
 
-  // removes outliers or if time == 0, a person could of rushed through the survey 
-  // and not cared about the questions or a person could have been away for awhile 
+  // removes outliers or if time == 0, a person could of rushed through the survey
+  // and not cared about the questions or a person could have been away for awhile
   // effecting the average unnecessarily e.g had dinner during survey time.
 
   removeOutliers() {
@@ -110,4 +110,4 @@ class Survey {
   }
 }
 
-module.exports = Survey ;
+module.exports = Survey;

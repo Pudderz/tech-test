@@ -7,7 +7,11 @@ const API_BACKEND =
 const INITIAL_NUMBER_OF_REQUESTS = 100;
 const MAX_REQUEST_LIMIT = 1000;
 const DECREASE_BY = 1.2;
-const MEAN_CHANGE_STOP_AS_PERCENTAGE = 2;
+
+//uses MEAN_CHANGE_STOP_AS_PERCENTAGE to compare against average mean change
+//of each survey. Once average mean change is within 
+//MEAN_CHANGE_STOP_AS_PERCENTAGE and checked, marks the result as done.
+const MEAN_CHANGE_STOP_AS_PERCENTAGE = 3;
 
 module.exports={
     API_BACKEND,
