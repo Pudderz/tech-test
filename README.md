@@ -6,7 +6,7 @@
 
 ### Aims
 - Object-oriented programming style
-- Test driven design
+- Test-driven developement
 
 ### Issues that I'll have
 - how to work out the average
