@@ -1,4 +1,4 @@
-const { GetSurveys } = require("./GetSurveys");
+const  GetSurveys = require("./GetSurveys");
 const fetch = require("node-fetch");
 const Survey = require("./Survey");
 const { Response } = jest.requireActual("node-fetch");
